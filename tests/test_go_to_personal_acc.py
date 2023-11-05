@@ -10,5 +10,5 @@ class TestStellarBurgersGoToPersonalProfile:
         WebDriverWait(driver, 3).until(EC.visibility_of_element_located(MainPageLocators.CREATE_ORDER_BUTTON))
         driver.find_element(*MainPageLocators.PERSONAL_PAGE_BUTTON).click()
         WebDriverWait(driver, 3).until(EC.visibility_of_element_located(ProfilePageLocators.PROFILE_BUTTON))
-        driver.find_element(*ProfilePageLocators.PROFILE_BUTTON).is_displayed()
+        assert driver.find_element(*ProfilePageLocators.PROFILE_BUTTON).text == 'Профиль'
 

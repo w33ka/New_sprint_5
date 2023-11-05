@@ -24,7 +24,7 @@ class TestStellarBurgersRegistration:
         driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
         WebDriverWait(driver, 3).until(EC.visibility_of_element_located(MainPageLocators.CREATE_ORDER_BUTTON))
 
-        driver.find_element(*MainPageLocators.CREATE_ORDER_BUTTON).is_displayed()
+        assert driver.find_element(*MainPageLocators.CREATE_ORDER_BUTTON).text == 'Оформить заказ'
 
     def test_registration_with_short_password_not_success(self, driver):
         email = faker.email()

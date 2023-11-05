@@ -13,7 +13,7 @@ class TestStellarBurgersGoToConstructor:
         driver.find_element(*MainPageLocators.CONSTRUCTOR_BUTTON).click()
         WebDriverWait(driver, 3).until(EC.visibility_of_element_located(MainPageLocators.CREATE_BURGER_TEXT))
 
-        driver.find_element(*MainPageLocators.CREATE_BURGER_TEXT).is_displayed()
+        assert driver.find_element(*MainPageLocators.CREATE_BURGER_TEXT).text == 'Соберите бургер'
 
     def test_go_to_constructor_button_logo(self, login):
         driver = login
@@ -23,4 +23,4 @@ class TestStellarBurgersGoToConstructor:
         driver.find_element(*MainPageLocators.LOGO_BUTTON).click()
         WebDriverWait(driver, 3).until(EC.visibility_of_element_located(MainPageLocators.CREATE_BURGER_TEXT))
 
-        driver.find_element(*MainPageLocators.CREATE_BURGER_TEXT).is_displayed()
+        assert driver.find_element(*MainPageLocators.CREATE_BURGER_TEXT).text == 'Соберите бургер'

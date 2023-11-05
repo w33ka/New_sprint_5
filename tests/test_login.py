@@ -11,7 +11,7 @@ class TestStellarBurgersLogIn:
         driver.find_element(*LoginPageLocators.PASSWORD_FIELD).send_keys('123456')
         driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
         WebDriverWait(driver, 3).until(EC.visibility_of_element_located(MainPageLocators.CREATE_ORDER_BUTTON))
-        driver.find_element(*MainPageLocators.CREATE_ORDER_BUTTON).is_displayed()
+        assert driver.find_element(*MainPageLocators.CREATE_ORDER_BUTTON).text == 'Оформить заказ'
 
     def test_login_from_personal_acc_page(self, driver):
         driver.find_element(*MainPageLocators.PERSONAL_PAGE_BUTTON).click()
@@ -19,7 +19,7 @@ class TestStellarBurgersLogIn:
         driver.find_element(*LoginPageLocators.PASSWORD_FIELD).send_keys('123456')
         driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
         WebDriverWait(driver, 3).until(EC.visibility_of_element_located(MainPageLocators.CREATE_ORDER_BUTTON))
-        driver.find_element(*MainPageLocators.CREATE_ORDER_BUTTON).is_displayed()
+        assert driver.find_element(*MainPageLocators.CREATE_ORDER_BUTTON).text == 'Оформить заказ'
 
     def test_login_from_registration_page(self, driver):
         driver.find_element(*MainPageLocators.PERSONAL_PAGE_BUTTON).click()
@@ -29,7 +29,7 @@ class TestStellarBurgersLogIn:
         driver.find_element(*LoginPageLocators.PASSWORD_FIELD).send_keys('123456')
         driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
         WebDriverWait(driver, 3).until(EC.visibility_of_element_located(MainPageLocators.CREATE_ORDER_BUTTON))
-        driver.find_element(*MainPageLocators.CREATE_ORDER_BUTTON).is_displayed()
+        assert driver.find_element(*MainPageLocators.CREATE_ORDER_BUTTON).text == 'Оформить заказ'
 
     def test_login_from_password_recovery_page(self, driver):
         driver.find_element(*MainPageLocators.LOGIN_IN_ACC).click()
@@ -39,6 +39,6 @@ class TestStellarBurgersLogIn:
         driver.find_element(*LoginPageLocators.PASSWORD_FIELD).send_keys('123456')
         driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
         WebDriverWait(driver, 3).until(EC.visibility_of_element_located(MainPageLocators.CREATE_ORDER_BUTTON))
-        driver.find_element(*MainPageLocators.CREATE_ORDER_BUTTON).is_displayed()
+        assert driver.find_element(*MainPageLocators.CREATE_ORDER_BUTTON).text == 'Оформить заказ'
 
 
